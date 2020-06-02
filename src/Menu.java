@@ -34,9 +34,9 @@ public class Menu extends JPanel implements ActionListener {
 //        conversions.setSize(500, 500);
         conversions.addActionListener(this);
 
-        add(basicCalc, BorderLayout.LINE_START);
-        add(scientific, BorderLayout.CENTER);
-        add(conversions, BorderLayout.LINE_END);
+        this.add(basicCalc, BorderLayout.LINE_START);
+        this.add(scientific, BorderLayout.CENTER);
+        this.add(conversions, BorderLayout.LINE_END);
     }
 
     @Override
