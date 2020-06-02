@@ -23,15 +23,15 @@ public class Menu extends JPanel implements ActionListener {
         super(new BorderLayout());
 
         basicCalc = new JButton("4-Function");
-        basicCalc.setSize(500, 500);
+//        basicCalc.setSize(500, 500);
         basicCalc.addActionListener(this);
 
         scientific = new JButton("Scientific");
-        scientific.setSize(500, 500);
+//        scientific.setSize(500, 500);
         scientific.addActionListener(this);
 
         conversions = new JButton("Conversions");
-        conversions.setSize(500, 500);
+//        conversions.setSize(500, 500);
         conversions.addActionListener(this);
 
         add(basicCalc, BorderLayout.LINE_START);
@@ -54,8 +54,4 @@ public class Menu extends JPanel implements ActionListener {
             System.out.println("conversions JButton Pressed");
         }
     }
-}
-
-class BasicCalculator extends JPanel {
-
 }
