@@ -136,12 +136,17 @@ class ButtonsPanel extends JPanel implements ActionListener {
         gbc.gridx = 2;
         gbc.gridy = 3;
         this.add(three, gbc);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridwidth = 2;
         gbc.gridx = 0;
         gbc.gridy = 4;
         this.add(zero, gbc);
+        gbc.gridwidth = 1;
         gbc.gridx = 2;
         gbc.gridy = 4;
         this.add(point, gbc);
+        gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.gridheight = 2;
         gbc.gridx = 3;
         gbc.gridy = 1;
         this.add(plus, gbc);
