@@ -37,6 +37,9 @@ public class BasicCalculator extends JPanel implements ActionListener {
     private JButton delete;
     private JButton clear;
 
+    private boolean calcDone = true;
+    private boolean operationPressed = false;
+
     private double num = 0;
     private double ans = 0;
 
@@ -208,6 +211,7 @@ public class BasicCalculator extends JPanel implements ActionListener {
 
         }
         operationType = NON;
+        calcDone = true;
     }
 
     @Override
@@ -216,43 +220,87 @@ public class BasicCalculator extends JPanel implements ActionListener {
             //replace current JPanel with the Menu Panel
             System.out.println("backToMenu button pressed");
         }
+        if(calcDone) {
+            display.setText("");
+            calcDone = false;
+        }
         if(e.getSource() == zero) {
+            if(operationPressed) {
+                display.setText("");
+                operationPressed = false;
+            }
             display.setText(display.getText() + "0");
 
         }
         if(e.getSource() == one) {
+            if(operationPressed) {
+                display.setText("");
+                operationPressed = false;
+            }
             display.setText(display.getText() + "1");
 
         }
         if(e.getSource() == two) {
+            if(operationPressed) {
+                display.setText("");
+                operationPressed = false;
+            }
             display.setText(display.getText() + "2");
 
         }
         if(e.getSource() == three) {
+            if(operationPressed) {
+                display.setText("");
+                operationPressed = false;
+            }
             display.setText(display.getText() + "3");
 
         }
         if(e.getSource() == four) {
+            if(operationPressed) {
+                display.setText("");
+                operationPressed = false;
+            }
             display.setText(display.getText() + "4");
 
         }
         if(e.getSource() == five) {
+            if(operationPressed) {
+                display.setText("");
+                operationPressed = false;
+            }
             display.setText(display.getText() + "5");
 
         }
         if(e.getSource() == six) {
+            if(operationPressed) {
+                display.setText("");
+                operationPressed = false;
+            }
             display.setText(display.getText() + "6");
 
         }
         if(e.getSource() == seven) {
+            if(operationPressed) {
+                display.setText("");
+                operationPressed = false;
+            }
             display.setText(display.getText() + "7");
 
         }
         if(e.getSource() == eight) {
+            if(operationPressed) {
+                display.setText("");
+                operationPressed = false;
+            }
             display.setText(display.getText() + "8");
 
         }
         if(e.getSource() == nine) {
+            if(operationPressed) {
+                display.setText("");
+                operationPressed = false;
+            }
             display.setText(display.getText() + "9");
 
         }
@@ -263,26 +311,46 @@ public class BasicCalculator extends JPanel implements ActionListener {
         if(e.getSource() == plus) {
 //            display.setText(display.getText() + "\u002B");
             operationType = ADD;
-            num = Double.parseDouble(display.getText());
-            display.setText("");
+            try {
+                num = Double.parseDouble(display.getText());
+            } catch (NumberFormatException nfe) {
+                num = 0;
+            }
+            operationPressed = true;
+//            display.setText("");
         }
         if(e.getSource() == minus) {
 //            display.setText(display.getText() + "\u002D");
             operationType = SUB;
-            num = Double.parseDouble(display.getText());
-            display.setText("");
+            try {
+                num = Double.parseDouble(display.getText());
+            } catch (NumberFormatException nfe) {
+                num = 0;
+            }
+            operationPressed = true;
+//            display.setText("");
         }
         if(e.getSource() == times) {
 //            display.setText(display.getText() + "\u00D7");
             operationType = MUL;
-            num = Double.parseDouble(display.getText());
-            display.setText("");
+            try {
+                num = Double.parseDouble(display.getText());
+            } catch (NumberFormatException nfe) {
+                num = 0;
+            }
+            operationPressed = true;
+//            display.setText("");
         }
         if(e.getSource() == divide) {
 //            display.setText(display.getText() + "\u00F7");
             operationType = DIV;
-            num = Double.parseDouble(display.getText());
-            display.setText("");
+            try {
+                num = Double.parseDouble(display.getText());
+            } catch (NumberFormatException nfe) {
+                num = 0;
+            }
+            operationPressed = true;
+//            display.setText("");
         }
         if(e.getSource() == equals) {
 //            display.setText(display.getText() + "\u003D");
