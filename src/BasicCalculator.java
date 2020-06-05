@@ -59,7 +59,7 @@ public class BasicCalculator extends JPanel implements ActionListener {
         backToMenu.setAlignmentX(Component.CENTER_ALIGNMENT);
         backToMenu.addActionListener(this);
 
-        display = new JTextField();
+        display = new JTextField("0.0");
         display.setEditable(false);
         display.setPreferredSize(new Dimension(400, 200));
 
@@ -186,23 +186,43 @@ public class BasicCalculator extends JPanel implements ActionListener {
     }
 
     public void calculation() {
+        double input;
         switch(operationType) {
             case ADD:
-                ans = num += Double.parseDouble(display.getText());
+                try {
+                    input = Double.parseDouble(display.getText());
+                } catch(NumberFormatException nfe) {
+                    input = 0.0;
+                }
+                ans = num += input;
                 display.setText(ans + "");
                 break;
             case SUB:
-                ans = num -= Double.parseDouble(display.getText());
+                try {
+                    input = Double.parseDouble(display.getText());
+                } catch(NumberFormatException nfe) {
+                    input = 0.0;
+                }
+                ans = num -= input;
                 display.setText(ans + "");
                 break;
             case MUL:
-                ans = num *= Double.parseDouble(display.getText());
+                try {
+                    input = Double.parseDouble(display.getText());
+                } catch(NumberFormatException nfe) {
+                    input = 0.0;
+                }
+                ans = num *= input;
                 display.setText(ans + "");
                 break;
             case DIV:
-                double divisor = Double.parseDouble(display.getText());
-                if(divisor != 0.0) {
-                    ans = num /= divisor;
+                try {
+                    input = Double.parseDouble(display.getText());
+                } catch(NumberFormatException nfe) {
+                    input = 0.0;
+                }
+                if(input != 0.0) {
+                    ans = num /= input;
                     display.setText(ans + "");
                 } else {
                     display.setText("Cannot divide by zero");
