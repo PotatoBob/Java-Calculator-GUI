@@ -1,0 +1,43 @@
+[
+    {
+        "length/distance": {
+            "meters": 1.0,
+            "kilometers": 1000.0,
+            "millimeters": 0.001,
+            "astronomical units": ,
+            "light-years": ,
+            "parsecs": ,
+            "hubble lengths": ,
+            "daltons": ,
+            "fermis": ,
+            "\u00E5ngstr\u00F6m": ,
+            "Bohr radii": ,
+            "Planck lengths": ,
+            "inches": ,
+            "feet": ,
+            "yards": ,
+            "furlongs": 201.168,
+            "miles": ,
+            "fathoms": ,
+            "nautical miles": ,
+            "chain": ,
+            "rod/pole/perch": 
+        }
+    },
+    {
+        "mass/weight": {
+            "kilograms": 1.0,
+            "grams": 0.001,
+            "milligrams": 1000.0,
+            "newtons": ,
+            "tonnes (metric)": ,
+            "atomic mass units": ,
+            "tons (short)": ,
+            "tons (long)": ,
+            "pounds": ,
+            "ounces": ,
+            "stone": ,
+            "slugs": 
+        }
+    }
+]
