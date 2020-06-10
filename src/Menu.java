@@ -1,16 +1,16 @@
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
+import javax.swing.JTabbedPane;
 
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
-public class Menu extends JPanel implements ActionListener {
-    private JButton basicCalc;
-    private JButton scientific;
-    private JButton conversions;
+public class Menu extends JTabbedPane {
 
+    public Menu() {
+        super();
+        BasicCalculator basicCalc = new BasicCalculator();
+        this.addTab("Basic", basicCalc);
+        this.setMnemonicAt(0, KeyEvent.VK_1);
+    }
     public static void main(String[] args) {
         JFrame frame = new JFrame("Calculator");
         Menu menu = new Menu();
@@ -18,40 +18,5 @@ public class Menu extends JPanel implements ActionListener {
         frame.pack();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-    public Menu() {
-        super(new BorderLayout());
-
-        basicCalc = new JButton("4-Function");
-//        basicCalc.setSize(500, 500);
-        basicCalc.addActionListener(this);
-
-        scientific = new JButton("Scientific");
-//        scientific.setSize(500, 500);
-        scientific.addActionListener(this);
-
-        conversions = new JButton("Conversions");
-//        conversions.setSize(500, 500);
-        conversions.addActionListener(this);
-
-        this.add(basicCalc, BorderLayout.LINE_START);
-        this.add(scientific, BorderLayout.CENTER);
-        this.add(conversions, BorderLayout.LINE_END);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == basicCalc) {
-            //replace Menu with BasicCalculator GUI
-            System.out.println("basicCalc JButton Pressed");
-        }
-        if(e.getSource() == scientific) {
-            //replace Menu with BasicCalculator GUI
-            System.out.println("scientific JButton Pressed");
-        }
-        if(e.getSource() == conversions) {
-            //replace Menu with BasicCalculator GUI
-            System.out.println("conversions JButton Pressed");
-        }
     }
 }

@@ -12,7 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class BasicCalculator extends JPanel implements ActionListener {
-    private JButton backToMenu;
     private JTextField display;
     private JPanel buttonsPanel;
 
@@ -53,11 +52,6 @@ public class BasicCalculator extends JPanel implements ActionListener {
     public BasicCalculator() {
         super();
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-
-        backToMenu = new JButton("Return to Calculator Menu");
-//        backToMenu.setPreferredSize(new Dimension(400, 20));
-        backToMenu.setAlignmentX(Component.CENTER_ALIGNMENT);
-        backToMenu.addActionListener(this);
 
         display = new JTextField("0.0");
         display.setEditable(false);
@@ -180,7 +174,6 @@ public class BasicCalculator extends JPanel implements ActionListener {
         gbc.fill = GridBagConstraints.VERTICAL;
         buttonsPanel.add(equals, gbc);
 
-        this.add(backToMenu);
         this.add(display);
         this.add(buttonsPanel);
     }
@@ -236,10 +229,6 @@ public class BasicCalculator extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == backToMenu) {
-            //replace current JPanel with the Menu Panel
-            System.out.println("backToMenu button pressed");
-        }
         if(calcDone && e.getSource() != equals && e.getSource() != plus && e.getSource() != minus && e.getSource() != times && e.getSource() != divide) {
             display.setText("");
             calcDone = false;
