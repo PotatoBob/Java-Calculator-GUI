@@ -18,7 +18,7 @@
             "furlongs": 201.168,
             "miles": 1609.34,
             "fathoms": 1.8288,
-            "nautical miles": 1852,
+            "nautical miles": 1852.0,
             "chain": 20.1168,
             "rod/pole/perch": 5.0292
         }
